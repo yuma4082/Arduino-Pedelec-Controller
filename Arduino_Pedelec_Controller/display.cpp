@@ -360,7 +360,7 @@ static void jlcd_update(byte battery, unsigned int wheeltime, byte error, int po
     {
         jlcd_last_transmission=millis();
         jlcd_receivecounter++;
-        byte receivedbyte=mySerial.read();
+        byte receivedbyte=mySerial.read();Serial.println(receivedbyte); 
         if (receivedbyte == 0x46)                         //start of new transmission frame detected-->last one is complete?
         {
             if (jlcd_receivecounter==6)                  //--> yes it is
